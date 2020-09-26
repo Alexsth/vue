@@ -1,23 +1,34 @@
-new Vue({
-    el: '#vue-app',
+var one = new Vue({
+    el: '#vue-app-one',
     data: {
-      health:100,
-      ended:false
+      title:"First instance"
+
     },
     methods: {
-        punch:function(){
-            this.health-=10
-            if(this.health<=0){
-                this.ended=true;
-            }
-        },
-        restart:function(){
-            this.health=100,
-            this.ended=false
-        }
+    
      
     },
     computed: {
+      greet:function(){
+          return 'Hello from first instance'
+      }
+    }
+});
+
+var two = new Vue({
+    el: '#vue-app-two',
+    data: {
+      title:'Second instance'
+    },
+    methods: {
+        change:function(){
+            one.title = 'Changed'
+        }
+    },
+    computed: {
+        greet:function(){
+            return 'Hello from second instance'
+        }
       
     }
 });
