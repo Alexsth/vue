@@ -1,7 +1,21 @@
+Vue.component('greeting',{
+    template: '<p> Hi {{name}}. <button v-on:click="change">Change name</button></p>',
+    data:function(){
+       return{ name: 'Alex'}
+    },
+    methods:{
+        change:function(){
+            this.name ='Nayana'
+        }
+    }
+
+    
+})
+
 var one = new Vue({
     el: '#vue-app-one',
     data: {
-      title:"First instance"
+     
 
     },
     methods: {
@@ -9,26 +23,19 @@ var one = new Vue({
      
     },
     computed: {
-      greet:function(){
-          return 'Hello from first instance'
-      }
+     
     }
 });
 
 var two = new Vue({
     el: '#vue-app-two',
     data: {
-      title:'Second instance'
     },
     methods: {
-        change:function(){
-            one.title = 'Changed'
-        }
+    
     },
     computed: {
-        greet:function(){
-            return 'Hello from second instance'
-        }
+    
       
     }
 });
